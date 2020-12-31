@@ -27,7 +27,7 @@ function SideBar() {
             <SideBarOptions Icon={LabelImportantIcon} title="Important" number={54} />
             <SideBarOptions Icon={NearMeIcon} title="Sent" number={54} />
             <SideBarOptions Icon={NoteIcon} title="Drafts" number={54} />
-            <SideBarOptions Icon={ExpandMoreIcon} title="More" number={54} />
+            <SideBarOptions Icon={ExpandMoreIcon} title="More"  />
 
             <div className="sidebar__footer">
                 <div className="sidebar__footerIcons">
