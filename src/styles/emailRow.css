@@ -38,12 +38,12 @@
 }
 
 .emailRow__time {
-    padding-right: 15px;
-    font-size: 11px;
-    font-weight: bold;
+  padding-right: 15px;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .emailRow__descriptions {
-    font-weight: 400;
-    color: gray;
+  font-weight: 400;
+  color: gray;
 }

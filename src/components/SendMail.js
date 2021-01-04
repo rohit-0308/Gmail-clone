@@ -1,4 +1,6 @@
 import React from "react";
+import {db} from '../firebase';
+import firebase from "firebase"
 import { Button, IconButton } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 
@@ -20,7 +22,17 @@ function SendMail() {
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
 
-  const onSubmit = (formData) => {};
+  const onSubmit = (formData) => {
+    db.collection('emails').add(
+      {
+        to:formData.to,
+        subject: formData.subject,
+        message: formData.message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      }
+    )
+    dispatch(closeSendMessage());
+  };
 
   return (
     <div className="sendMail">
@@ -90,7 +102,7 @@ function SendMail() {
               <MoreVertIcon />
             </IconButton>
             <IconButton>
-              <DeleteIcon />
+              <DeleteIcon  onClick={() => dispatch(closeSendMessage())} />
             </IconButton>
           </div>
         </div>
